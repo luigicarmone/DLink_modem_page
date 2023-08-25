@@ -17,10 +17,6 @@ function App() {
   return (
     <>
     <Login />
-    <h2>
-    {t('translations:hello_world')}
-    </h2>
-    <span>browser language: {lng}</span>
     </>
   );
 }

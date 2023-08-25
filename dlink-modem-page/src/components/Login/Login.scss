@@ -1,23 +1,28 @@
 :root {
-    --main-color: #fff;
-    --second-color: #347deb;
     --box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
+
+
+
+#bodyLogin {
+  font-family: var(--font-base);
+  min-height: 100vh;
+  background-image: linear-gradient(310deg, #E9F1F7, #2274A5);
+}
+
+.dlink_logo {
+  background-repeat: no-repeat;
+  width: 15%; 
+  height: 15%; 
+  margin: 10px;
+}
   
-  html {
-    height: 100%;
-  }
-  body {
-    background-image: linear-gradient(310deg, #df98fa, #9055ff);
-    font-family: sans-serif;
-  }
-  
-  #container {
+#containerForm {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: var(--main-color);
+    background-color: var(--white-color);
     width: 1200px;
     height: 800px;
     border-radius: 10px;
@@ -25,30 +30,35 @@
     grid-template-columns: repeat(2, 50%);
     box-shadow: var(--box-shadow);
     transition-duration: 1s;
-  }
+    
+}
   
-  #left, #right {
+  #leftForm, #rightForm {
     margin: auto;
     width: 95%;
     height: 96%;
     border-radius: 10px;
+    
   }
   
-  #left {
-    background-image: url("https://images.unsplash.com/photo-1615400014497-55726234cccb?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxNzg4Njg0Ng&ixlib=rb-1.2.1&q=85");
+  #leftForm {
+    background-image: url("https://eu.dlink.com/it/it/-/media/landing-pages/2020/wifi-6/business/wifi6business_06_crowd.jpg?h=976&w=2600&la=it-IT&hash=E191062E03DEC3BA5B83872CAEEC1A38");
     background-size: cover;
     background-position: center;
     box-shadow: var(--box-shadow);
+    
   }
-  #welcome, #lorem {
+  #welcomeForm, #loremForm {
     margin: 20px;
     text-shadow: var(--box-shadow);
+    color: var(--white-color);
   }
-  #welcome {
+  #welcomeForm {
     font-size: 75px;
     font-weight: 300;
     margin-top: 330px;
     text-shadow: var(--box-shadow);
+    color: var(--white-color);
   }
   
   #login {
@@ -58,6 +68,7 @@
     font-weight: 100;
     text-shadow: var(--box-shadow);
   }
+
   .client-info {
     display: block;
     margin: 20px auto;
@@ -72,7 +83,7 @@
   .client-info:focus {
     width: 80%;
   }
-  label {
+  #rightForm > label {
     position: absolute;
     margin: -76px 130px;
       font-size: 12px;
@@ -83,7 +94,7 @@
     transition: all 200ms;
     text-shadow: var(--box-shadow);
   }
-  #email:focus ~ label[for="email"] {
+  #username:focus ~ label[for="text"] {
     margin: -76px 70px;
   }
   #password:focus ~ label[for="password"] {
@@ -91,78 +102,122 @@
   }
   #submit {
     border: none;
-    background-color: #9055ff;
-    color: white;
+    background-color: var(--blue-color);
+    color: var(--white-color);
     width: 60%;
   }
   #submit:hover {
-    background-color: #df98fa;
+    background-color: #0f496b;
   }
-  
-  .social {
-    background-color: #fff;
-    display: block;
-    margin: 10px auto;
-    width: 70%;
-    height: 50px;
-    border: none;
-    border-radius: 5px;
-    text-transform: uppercase;
-    transition-duration: 200ms;
-    box-shadow: var(--box-shadow);
-    text-shadow: var(--box-shadow);
+
+  .copyright_footer{
+    font-family: var(--font-base);
+    font-size: 5px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    text-align: left;
   }
-  #facebook {
-    border: solid var(--facebook-color) 1px;
-    color: var(--facebook-color);
-  }
-  #facebook:hover {
-    background-color: var(--facebook-color);
-    color: white;
-  }
-  #google {
-    border: solid var(--google-color) 1px;
-    color: var(--google-color);
-  }
-  #google:hover {
-    background-color: var(--google-color);
-    color: white;
-  }
+
+  @keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
   
   @media (max-width: 1250px) {
+
+    img.dlink_logo {
+        position: absolute; /* Posiziona il logo in modo assoluto */
+        top: 0;
+        left: 45%;
+        width: 15%; 
+        height: auto; 
+        transform: translateX(-50%);
+        animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
    
-    #container {
+    #containerForm {
       width: 600px;
       display: block;
+      
     }
-    #left {
+    #leftForm {
       display: none;
+      color: var(--white-color);
     }
-    #right {
+    #rightForm {
       margin-top: 16px;
-      background-image: url("https://images.unsplash.com/photo-1615400014497-55726234cccb?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxNzg4Njg0Ng&ixlib=rb-1.2.1&q=85");
+      background-image: url("https://eu.dlink.com/it/it/-/media/landing-pages/2020/wifi-6/business/wifi6business_06_crowd.jpg?h=976&w=2600&la=it-IT&hash=E191062E03DEC3BA5B83872CAEEC1A38");
       background-size: cover;
       background-position: center;
       box-shadow: var(--box-shadow);
+      color: var(--white-color);
     }
     
   }
   
   @media (max-height: 850px) {
-   
-    #container {
+
+    img.dlink_logo {
+      position: absolute; /* Posiziona il logo in modo assoluto */
+      top: 0;
+      left: 45%;
+      width: 15%; 
+      height: auto; 
+      transform: translateX(-50%);
+      animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+    #containerForm {
       width: 1000px;
       height: 600px;
+      
     }
     #login {
       padding-top: 20%;
     }
-    #welcome {
+    #welcomeForm {
       margin-top: 240px;
       font-size: 60px;
+      color: var(--white-color);
     }
-    #lorem {
+    #loremForm {
       font-size: 15px;
+      color: var(--white-color);
     }
-    
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    img.dlink_logo {
+      position: absolute; /* Posiziona il logo in modo assoluto */
+      top: 10%;
+      left: 33%;
+      width: 35%; 
+      height: auto; 
+      transform: translateX(-50%);
+      animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+    #containerForm {
+      width: 400px;
+      height: 600px;
+      
+    }
+    #login {
+      padding-top: 10%;
+    }
+    #welcomeForm {
+      margin-top: 240px;
+      font-size: 60px;
+      color: var(--white-color);
+    }
+    #loremForm {
+      font-size: 15px;
+      color: var(--white-color);
+    }
   }

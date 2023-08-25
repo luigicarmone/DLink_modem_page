@@ -1,3 +1,5 @@
 {
-    "hello_world": "Ciao Mondo"
+    "hello_world": "Ciao Mondo",
+    "welcome":"Benvenuto",
+    "username":"Nome Utente"
 }
