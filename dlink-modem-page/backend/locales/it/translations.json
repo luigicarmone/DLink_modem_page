@@ -1,5 +1,6 @@
 {
     "hello_world": "Ciao Mondo",
     "welcome":"Benvenuto",
-    "username":"Nome Utente"
+    "username":"Nome Utente",
+    "name": "Nome"
 }

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { images } from "../../constants";
 import { Link } from "react-router-dom";
-import "./Login.scss";
+import "./Register.scss";
 import { useTranslation } from "react-i18next";
 import "../../i18.js";
 
-const Login = () => {
+const Register = () => {
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
@@ -25,8 +25,10 @@ const Login = () => {
          <p id="loremForm"> Supporto </p>
         </div>
         <form id="rightForm">
-          <h1 id="login">LogIn</h1>
+          <h1 id="login">Sign Up</h1>
           <br />
+          <input type="text" id="name" className="client-info" />
+          <label>{t("translations:name")}</label>
           <input type="text" id="username" className="client-info" />
           <label>{t("translations:username")}</label>
           <input type="password" id="password" className="client-info" />
@@ -35,9 +37,9 @@ const Login = () => {
             type="submit"
             id="submit"
             className="client-info"
-            value="Login"
+            value="Sign Up"
           />
-          <Link to="/signup" className="client-info">Create Account </Link>
+          <Link to="/" className="client-info">Login</Link>
         </form>
       </div>
       <footer className="copyright_footer">
@@ -48,4 +50,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
