@@ -16,8 +16,12 @@ const Login = () => {
 
   const lng = navigator.language;
 
+  const handleLanguageChange = (e) => {
+    const selectedLanguage = e.target.value;
+    i18n.changeLanguage(selectedLanguage);
+  };
+
   // validation form
-  
   const [formData, setFormData] = useState({
     username: '',
     // email: '',
@@ -105,6 +109,15 @@ const Login = () => {
           <label htmlFor="password" className={errors.password ? 'text_danger' : ''} style={errors.password ? { color: 'red' } : {}}>
           {errors.password ? errors.password : "Password"}
           </label>
+
+          <div className="language-select">
+            <label htmlFor="language">{t("translations:selectLanguage")}</label>
+              <select id="language" onChange={handleLanguageChange} value={i18n.language}>
+                <option value="en">English</option>
+                <option value="it">Italiano</option>
+              </select>
+          </div>
+
           <Link to="/forgotPassword" className="forgotPassword">{t('translations:forgotPassword')}</Link>
           <button type="submit" id="submit" className="client-info">Login</button>
           <Link to="/signup" id="submit2" className="client-info">{t('translations:createAccount')}</Link>
