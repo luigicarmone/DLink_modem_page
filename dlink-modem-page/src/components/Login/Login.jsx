@@ -62,6 +62,10 @@ const Login = () => {
 
     if(Object.keys(validationErrors).length === 0) {
         alert("Form Submitted successfully")
+        setFormData({
+          username: '',
+          password: ''
+        });
     }
 
   }
@@ -77,13 +81,29 @@ const Login = () => {
         <form id="rightForm" onSubmit={handleSubmit}>
           <h1 id="login">LogIn</h1>
           <br />
-          <input type="text" id="username" className="client-info" name="username" onChange={handleChange}/>
-          {errors.username && <span>{errors.username}</span>}  
-          <label htmlFor="username">{t("translations:username")}</label>
+          <input
+            type="text"
+            id="username"
+            className={`client-info ${errors.username ? 'text_danger' : ''}`}
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+          />
+          <label htmlFor="username" className={errors.username ? 'text_danger' : ''}>
+            {errors.username ? errors.username : t("translations:username")}
+          </label>
 
-          <input type="password" id="password" className="client-info" name="password" onChange={handleChange} />
-          {errors.password && <span>{errors.password}</span>} 
-          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            className={`client-info ${errors.password ? 'text_danger' : ''}`}
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+          />
+          <label htmlFor="password" className={errors.password ? 'text_danger' : ''}>
+            {errors.password ? errors.password : "Password"}
+          </label>
 
           <button type="submit" id="submit" className="client-info">Login</button>
 

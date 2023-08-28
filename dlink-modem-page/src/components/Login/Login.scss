@@ -6,9 +6,16 @@
   color: red;           // Colore del testo in rosso
   font-size: 14px;      // Dimensione del testo
   font-weight: bold;    // Grassetto
-  margin-top: 5px;   
-  z-index: 100;   // Margine superiore
   text-align: right;
+  
+}
+
+.text_danger.client-info {
+  border-color: red;
+}
+
+.text_danger label {
+  color: red;
 }
 
 #bodyLogin {
@@ -125,6 +132,7 @@
     left: 10px;
     text-align: left;
   }
+  
 
   @keyframes slide-in-left {
     0% {
