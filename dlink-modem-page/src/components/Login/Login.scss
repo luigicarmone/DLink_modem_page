@@ -2,21 +2,6 @@
     --box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
-.text-danger {
-  color: red;           // Colore del testo in rosso
-  font-size: 14px;      // Dimensione del testo
-  font-weight: bold;    // Grassetto
-  text-align: right;
-  
-}
-
-.text_danger.client-info {
-  border-color: red;
-}
-
-.text_danger label {
-  color: red;
-}
 
 #bodyLogin {
   font-family: var(--font-base);
@@ -107,6 +92,7 @@
     color: #999;
     transition: all 200ms;
     text-shadow: var(--box-shadow);
+    
   }
   #username:focus ~ label[for="text"] {
     margin: -76px 70px;
@@ -114,14 +100,30 @@
   #password:focus ~ label[for="password"] {
     margin: -76px 70px;
   }
+
   #submit {
     border: none;
     background-color: var(--blue-color);
     color: var(--white-color);
     width: 60%;
   }
+  
   #submit:hover {
     background-color: #0f496b;
+  }
+  
+  #submit2 {
+    border: none;
+    background-color: #48d86e; 
+    color: var(--white-color);
+    width: 60%;
+    text-decoration: none;
+    text-align: center;
+    line-height: 3;
+  }
+  
+  #submit2:hover {
+    background-color: #267d3d; 
   }
 
   .copyright_footer{
@@ -133,6 +135,32 @@
     text-align: left;
   }
   
+  .text-danger {
+    color: red;           
+    font-size: 14px;      
+    font-weight: bold;    
+    text-align: right;
+  }
+  
+  .text_danger.client-info {
+    border-color: red;
+  }
+  
+  .text_danger label {
+    color: red; 
+  }
+
+  .forgotPassword{
+    text-align: center;
+    text-decoration:none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .forgotPassword:hover{
+    text-decoration:underline;
+  }
 
   @keyframes slide-in-left {
     0% {

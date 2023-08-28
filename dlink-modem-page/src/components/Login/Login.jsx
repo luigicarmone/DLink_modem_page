@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "./Login.scss";
 import { useTranslation } from "react-i18next";
 import "../../i18.js";
-// import { validEmail, validPassword } from './Regex.jsx';
 
 const Login = () => {
   // change language 
@@ -88,9 +87,10 @@ const Login = () => {
             name="username"
             value={formData.username}
             onChange={handleChange}
-          />
-          <label htmlFor="username" className={errors.username ? 'text_danger' : ''}>
-            {errors.username ? errors.username : t("translations:username")}
+            style={errors.username ? { color: 'red' } : {}}
+            />
+          <label htmlFor="username" className={errors.username ? 'text_danger' : ''} style={errors.username ? { color: 'red' } : {}}> 
+          {errors.username ? errors.username : t("translations:username")} 
           </label>
 
           <input
@@ -100,14 +100,14 @@ const Login = () => {
             name="password"
             value={formData.password}
             onChange={handleChange}
+            style={errors.password ? { color: 'red' } : {}}
           />
-          <label htmlFor="password" className={errors.password ? 'text_danger' : ''}>
-            {errors.password ? errors.password : "Password"}
+          <label htmlFor="password" className={errors.password ? 'text_danger' : ''} style={errors.password ? { color: 'red' } : {}}>
+          {errors.password ? errors.password : "Password"}
           </label>
-
+          <Link to="/forgotPassword" className="forgotPassword">{t('translations:forgotPassword')}</Link>
           <button type="submit" id="submit" className="client-info">Login</button>
-
-          <Link to="/signup" className="client-info">Create Account </Link>
+          <Link to="/signup" id="submit2" className="client-info">{t('translations:createAccount')}</Link>
         </form>
       </div>
       <footer className="copyright_footer">
