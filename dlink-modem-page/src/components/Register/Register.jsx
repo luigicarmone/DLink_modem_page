@@ -28,11 +28,11 @@ const Register = () => {
           <h1 id="login">Sign Up</h1>
           <br />
           <input type="text" id="name" className="client-info" />
-          <label>{t("translations:name")}</label>
+          <label htmlFor="name">{t("translations:name")}</label>
           <input type="text" id="username" className="client-info" />
-          <label>{t("translations:username")}</label>
+          <label htmlFor="username">{t("translations:username")}</label>
           <input type="password" id="password" className="client-info" />
-          <label>Password</label>
+          <label htmlFor="password">Password</label>
           <input
             type="submit"
             id="submit"

@@ -2,7 +2,14 @@
     --box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
-
+.text-danger {
+  color: red;           // Colore del testo in rosso
+  font-size: 14px;      // Dimensione del testo
+  font-weight: bold;    // Grassetto
+  margin-top: 5px;   
+  z-index: 100;   // Margine superiore
+  text-align: right;
+}
 
 #bodyLogin {
   font-family: var(--font-base);

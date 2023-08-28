@@ -2,5 +2,9 @@
     "hello_world": "Ciao Mondo",
     "welcome":"Benvenuto",
     "username":"Nome Utente",
-    "name": "Nome"
+    "name": "Nome",
+    "error_username": "Il nome utente non deve essere vuoto",
+    "usernameDoesntMatch": "Errore username",
+    "passwordEmpty": "La password non deve essere vuota",
+    "passwordLength": "La password deve essere di almeno 6 caratteri"
 }

@@ -1,223 +1,223 @@
-:root {
-    --box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-}
+// :root {
+//     --box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+// }
 
 
 
-#bodyLogin {
-  font-family: var(--font-base);
-  min-height: 100vh;
-  background-image: linear-gradient(310deg, #E9F1F7, #2274A5);
-}
+// #bodyLogin {
+//   font-family: var(--font-base);
+//   min-height: 100vh;
+//   background-image: linear-gradient(310deg, #E9F1F7, #2274A5);
+// }
 
-.dlink_logo {
-  background-repeat: no-repeat;
-  width: 15%; 
-  height: 15%; 
-  margin: 10px;
-}
+// .dlink_logo {
+//   background-repeat: no-repeat;
+//   width: 15%; 
+//   height: 15%; 
+//   margin: 10px;
+// }
   
-#containerForm {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--white-color);
-    width: 1200px;
-    height: 800px;
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    box-shadow: var(--box-shadow);
-    transition-duration: 1s;
+// #containerForm {
+//     position: absolute;
+//     left: 50%;
+//     top: 50%;
+//     transform: translate(-50%, -50%);
+//     background-color: var(--white-color);
+//     width: 1200px;
+//     height: 800px;
+//     border-radius: 10px;
+//     display: grid;
+//     grid-template-columns: repeat(2, 50%);
+//     box-shadow: var(--box-shadow);
+//     transition-duration: 1s;
     
-}
+// }
   
-  #leftForm, #rightForm {
-    margin: auto;
-    width: 95%;
-    height: 96%;
-    border-radius: 10px;
+//   #leftForm, #rightForm {
+//     margin: auto;
+//     width: 95%;
+//     height: 96%;
+//     border-radius: 10px;
     
-  }
+//   }
   
-  #leftForm {
-    background-image: url("https://eu.dlink.com/it/it/-/media/landing-pages/2020/wifi-6/business/wifi6business_06_crowd.jpg?h=976&w=2600&la=it-IT&hash=E191062E03DEC3BA5B83872CAEEC1A38");
-    background-size: cover;
-    background-position: center;
-    box-shadow: var(--box-shadow);
+//   #leftForm {
+//     background-image: url("https://eu.dlink.com/it/it/-/media/landing-pages/2020/wifi-6/business/wifi6business_06_crowd.jpg?h=976&w=2600&la=it-IT&hash=E191062E03DEC3BA5B83872CAEEC1A38");
+//     background-size: cover;
+//     background-position: center;
+//     box-shadow: var(--box-shadow);
     
-  }
-  #welcomeForm, #loremForm {
-    margin: 20px;
-    text-shadow: var(--box-shadow);
-    color: var(--white-color);
-  }
-  #welcomeForm {
-    font-size: 75px;
-    font-weight: 300;
-    margin-top: 330px;
-    text-shadow: var(--box-shadow);
-    color: var(--white-color);
-  }
+//   }
+//   #welcomeForm, #loremForm {
+//     margin: 20px;
+//     text-shadow: var(--box-shadow);
+//     color: var(--white-color);
+//   }
+//   #welcomeForm {
+//     font-size: 75px;
+//     font-weight: 300;
+//     margin-top: 330px;
+//     text-shadow: var(--box-shadow);
+//     color: var(--white-color);
+//   }
   
-  #login {
-    padding-top: 35%;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 100;
-    text-shadow: var(--box-shadow);
-  }
+//   #login {
+//     padding-top: 35%;
+//     text-align: center;
+//     text-transform: uppercase;
+//     font-weight: 100;
+//     text-shadow: var(--box-shadow);
+//   }
 
-  .client-info {
-    display: block;
-    margin: 20px auto;
-    width: 60%;
-    height: 50px;
-    border: solid #999 1px;
-    border-radius: 5px;
-    text-indent: 15px;
-    transition: all 200ms;
-    box-shadow: var(--box-shadow);
-  }
-  .client-info:focus {
-    width: 80%;
-  }
-  #rightForm > label {
-    position: absolute;
-    margin: -76px 130px;
-    font-size: 12px;
-    white-space: nowrap;
-    background: #fff;
-    padding: 0 5px;
-    color: #999;
-    transition: all 200ms;
-    text-shadow: var(--box-shadow);
-  }
-  #username:focus ~ label[for="text"] {
-    margin: -76px 70px;
-  }
-  #password:focus ~ label[for="password"] {
-    margin: -76px 70px;
-  }
-  #submit {
-    border: none;
-    background-color: var(--blue-color);
-    color: var(--white-color);
-    width: 60%;
-  }
-  #submit:hover {
-    background-color: #0f496b;
-  }
+//   .client-info {
+//     display: block;
+//     margin: 20px auto;
+//     width: 60%;
+//     height: 50px;
+//     border: solid #999 1px;
+//     border-radius: 5px;
+//     text-indent: 15px;
+//     transition: all 200ms;
+//     box-shadow: var(--box-shadow);
+//   }
+//   .client-info:focus {
+//     width: 80%;
+//   }
+//   #rightForm > label {
+//     position: absolute;
+//     margin: -76px 130px;
+//     font-size: 12px;
+//     white-space: nowrap;
+//     background: #fff;
+//     padding: 0 5px;
+//     color: #999;
+//     transition: all 200ms;
+//     text-shadow: var(--box-shadow);
+//   }
+//   #username:focus ~ label[for="text"] {
+//     margin: -76px 70px;
+//   }
+//   #password:focus ~ label[for="password"] {
+//     margin: -76px 70px;
+//   }
+//   #submit {
+//     border: none;
+//     background-color: var(--blue-color);
+//     color: var(--white-color);
+//     width: 60%;
+//   }
+//   #submit:hover {
+//     background-color: #0f496b;
+//   }
 
-  .copyright_footer{
-    font-family: var(--font-base);
-    font-size: 5px;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    text-align: left;
-  }
+//   .copyright_footer{
+//     font-family: var(--font-base);
+//     font-size: 5px;
+//     position: absolute;
+//     bottom: 10px;
+//     left: 10px;
+//     text-align: left;
+//   }
 
-  @keyframes slide-in-left {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
+//   @keyframes slide-in-left {
+//     0% {
+//         transform: translateX(-100%);
+//     }
+//     100% {
+//         transform: translateX(0);
+//     }
+// }
   
-  @media (max-width: 1250px) {
+//   @media (max-width: 1250px) {
 
-    img.dlink_logo {
-        position: absolute; /* Posiziona il logo in modo assoluto */
-        top: 0;
-        left: 45%;
-        width: 15%; 
-        height: auto; 
-        transform: translateX(-50%);
-        animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    }
+//     img.dlink_logo {
+//         position: absolute; /* Posiziona il logo in modo assoluto */
+//         top: 0;
+//         left: 45%;
+//         width: 15%; 
+//         height: auto; 
+//         transform: translateX(-50%);
+//         animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+//     }
    
-    #containerForm {
-      width: 600px;
-      display: block;
+//     #containerForm {
+//       width: 600px;
+//       display: block;
       
-    }
-    #leftForm {
-      display: none;
-      color: var(--white-color);
-    }
-    #rightForm {
-      margin-top: 16px;
-      background-image: url("https://eu.dlink.com/it/it/-/media/landing-pages/2020/wifi-6/business/wifi6business_06_crowd.jpg?h=976&w=2600&la=it-IT&hash=E191062E03DEC3BA5B83872CAEEC1A38");
-      background-size: cover;
-      background-position: center;
-      box-shadow: var(--box-shadow);
-      color: var(--white-color);
-    }
+//     }
+//     #leftForm {
+//       display: none;
+//       color: var(--white-color);
+//     }
+//     #rightForm {
+//       margin-top: 16px;
+//       background-image: url("https://eu.dlink.com/it/it/-/media/landing-pages/2020/wifi-6/business/wifi6business_06_crowd.jpg?h=976&w=2600&la=it-IT&hash=E191062E03DEC3BA5B83872CAEEC1A38");
+//       background-size: cover;
+//       background-position: center;
+//       box-shadow: var(--box-shadow);
+//       color: var(--white-color);
+//     }
 
-  }
+//   }
   
-  @media (max-height: 850px) {
+//   @media (max-height: 850px) {
 
-    img.dlink_logo {
-      position: absolute; /* Posiziona il logo in modo assoluto */
-      top: 0;
-      left: 45%;
-      width: 15%; 
-      height: auto; 
-      transform: translateX(-50%);
-      animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  }
+//     img.dlink_logo {
+//       position: absolute; /* Posiziona il logo in modo assoluto */
+//       top: 0;
+//       left: 45%;
+//       width: 15%; 
+//       height: auto; 
+//       transform: translateX(-50%);
+//       animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+//   }
 
-    #containerForm {
-      width: 1000px;
-      height: 600px;
+//     #containerForm {
+//       width: 1000px;
+//       height: 600px;
       
-    }
-    #login {
-      padding-top: 20%;
-    }
-    #welcomeForm {
-      margin-top: 240px;
-      font-size: 60px;
-      color: var(--white-color);
-    }
-    #loremForm {
-      font-size: 15px;
-      color: var(--white-color);
-    }
-  }
+//     }
+//     #login {
+//       padding-top: 20%;
+//     }
+//     #welcomeForm {
+//       margin-top: 240px;
+//       font-size: 60px;
+//       color: var(--white-color);
+//     }
+//     #loremForm {
+//       font-size: 15px;
+//       color: var(--white-color);
+//     }
+//   }
 
-  @media only screen and (max-width: 768px) {
+//   @media only screen and (max-width: 768px) {
 
-    img.dlink_logo {
-      position: absolute; /* Posiziona il logo in modo assoluto */
-      top: 10%;
-      left: 33%;
-      width: 35%; 
-      height: auto; 
-      transform: translateX(-50%);
-      animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  }
+//     img.dlink_logo {
+//       position: absolute; /* Posiziona il logo in modo assoluto */
+//       top: 10%;
+//       left: 33%;
+//       width: 35%; 
+//       height: auto; 
+//       transform: translateX(-50%);
+//       animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+//   }
 
-    #containerForm {
-      width: 400px;
-      height: 600px;
+//     #containerForm {
+//       width: 400px;
+//       height: 600px;
       
-    }
-    #login {
-      padding-top: 10%;
-    }
-    #welcomeForm {
-      margin-top: 240px;
-      font-size: 60px;
-      color: var(--white-color);
-    }
-    #loremForm {
-      font-size: 15px;
-      color: var(--white-color);
-    }
-  }
+//     }
+//     #login {
+//       padding-top: 10%;
+//     }
+//     #welcomeForm {
+//       margin-top: 240px;
+//       font-size: 60px;
+//       color: var(--white-color);
+//     }
+//     #loremForm {
+//       font-size: 15px;
+//       color: var(--white-color);
+//     }
+//   }
