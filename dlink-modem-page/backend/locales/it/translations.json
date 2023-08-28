@@ -8,5 +8,6 @@
     "passwordEmpty": "La password non deve essere vuota",
     "passwordLength": "La password deve essere di almeno 6 caratteri",
     "createAccount":"Crea Account",
-    "forgotPassword":"Password dimenticata?"
+    "forgotPassword":"Password dimenticata?",
+    "selectLanguage":"Seleziona lingua"
 }
