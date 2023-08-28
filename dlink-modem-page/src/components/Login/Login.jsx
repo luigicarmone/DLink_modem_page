@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import "./Login.scss";
 import { useTranslation } from "react-i18next";
 import "../../i18.js";
+import { IoEye, IoEyeOff } from 'react-icons/io5';
+
 
 const Login = () => {
   // change language 
@@ -20,6 +22,14 @@ const Login = () => {
     const selectedLanguage = e.target.value;
     i18n.changeLanguage(selectedLanguage);
   };
+
+  // show password
+  const [showPassword, setShowPassword] = useState(false);
+
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
 
   // validation form
   const [formData, setFormData] = useState({
@@ -79,7 +89,6 @@ const Login = () => {
       <div id="containerForm">
         <div id="leftForm">
           <h1 id="welcomeForm">{t('translations:welcome')}</h1>
-         <p id="loremForm"> Supporto </p>
         </div>
         <form id="rightForm" onSubmit={handleSubmit}>
           <h1 id="login">LogIn</h1>
@@ -98,7 +107,7 @@ const Login = () => {
           </label>
 
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             id="password"
             className={`client-info ${errors.password ? 'text_danger' : ''}`}
             name="password"
@@ -109,12 +118,16 @@ const Login = () => {
           <label htmlFor="password" className={errors.password ? 'text_danger' : ''} style={errors.password ? { color: 'red' } : {}}>
           {errors.password ? errors.password : "Password"}
           </label>
+          <span className="password-toggle" onClick={toggleShowPassword}>
+            {showPassword ? <IoEyeOff /> : <IoEye />}
+          </span>
+
 
           <div className="language-select">
-            <label htmlFor="language">{t("translations:selectLanguage")}</label>
-              <select id="language" onChange={handleLanguageChange} value={i18n.language}>
-                <option value="en">English</option>
-                <option value="it">Italiano</option>
+            <label htmlFor="language" className="language-label">{t("translations:selectLanguage")}</label>
+              <select className="language-dropdown" id="language" onChange={handleLanguageChange} value={i18n.language}>
+                <option value="en">{t("translations:english")}</option>
+                <option value="it">{t("translations:italian")}</option>
               </select>
           </div>
 

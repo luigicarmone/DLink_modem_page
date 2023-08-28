@@ -7,7 +7,12 @@
     "usernameDoesntMatch": "Username error",
     "passwordEmpty": "Password is required",
     "passwordLength": "Password should be at least 6 char",
+    "register":"Register",
+    "confirmPassword":"Password not matched",
+    "confirmPassword2":"Confirm Password",
     "createAccount":"Create Account",
     "forgotPassword":"Forgot Password?",
-    "selectLanguage":"Select language"
+    "selectLanguage":"Select language",
+    "english":"English",
+    "italian":"Italian"
 }
