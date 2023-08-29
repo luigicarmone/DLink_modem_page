@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { images } from "../../constants";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.scss";
 import { useTranslation } from "react-i18next";
 import "../../i18.js";
 import { IoEye, IoEyeOff } from 'react-icons/io5';
+import axios from 'axios';
 
 
 const Login = () => {
+  const navigate = useNavigate();
   // change language 
   const { t, i18n } = useTranslation();
 
@@ -73,8 +75,19 @@ const Login = () => {
 
     setErrors(validationErrors)
 
+    if (Object.keys(validationErrors).length === 0){
+      axios.post('http://localhost:4000/login', formData)
+      .then(res => {
+      if (res.data.message === "Success") {
+          navigate('/status');
+      } else {
+          alert("Credenziali non corrette");
+      }
+      })
+      .catch(err => console.log(err));
+  }
+
     if(Object.keys(validationErrors).length === 0) {
-        alert("Form Submitted successfully")
         setFormData({
           username: '',
           password: ''
@@ -109,7 +122,7 @@ const Login = () => {
           <input
             type={showPassword ? "text" : "password"}
             id="password"
-            className={`client-info ${errors.password ? 'text_danger' : ''}`}
+            className={`client-info2 ${errors.password ? 'text_danger' : ''}`}
             name="password"
             value={formData.password}
             onChange={handleChange}

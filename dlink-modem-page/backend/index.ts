@@ -1,7 +1,7 @@
-import app from "./server";
+// import app from "./server";
 
-const PORT = 4000;
+// // const PORT = 4000;
 
-app.listen(PORT, () => {
-  console.log(`Il server è sulla porta: ${PORT}`);
-});
+// // app.listen(PORT, () => {
+// //   console.log(`Il server è sulla porta: ${PORT}`);
+// // });

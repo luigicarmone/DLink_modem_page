@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --config ./jest.config.ts",
     "build": "tsc",
-    "start": "ts-node index.ts",
+    "start": "nodemon server.js",
     "dev": "nodemon --watch '**/*' --ignore 'node_modules/' -e 'ts' --exec 'ts-node' index.ts",
     "seed:init": "ts-node ./src/seeds/init.ts"
   },

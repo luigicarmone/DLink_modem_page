@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { images } from "../../constants";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Register.scss";
 import { useTranslation } from "react-i18next";
 import "../../i18.js";
+import { IoEye, IoEyeOff } from 'react-icons/io5';
+import axios from 'axios';
 
 const Register = () => {
   // change language 
@@ -21,6 +23,19 @@ const Register = () => {
     i18n.changeLanguage(selectedLanguage);
   };
 
+    // show password
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfPassword, setShowConfPassword] = useState(false);
+
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleShowConfPassword = () => {
+    setShowConfPassword(!showConfPassword);
+  };
+
+
   // validation form
   const [formData, setFormData] = useState({
     username: '',
@@ -28,7 +43,7 @@ const Register = () => {
     password: '',
     confirmPassword: ''
   })
-
+  const navigate = useNavigate();
   const [errors, setErrors] = useState({})
 
   const handleChange = (e) => {
@@ -61,7 +76,12 @@ const Register = () => {
         validationErrors.confirmPassword = t("translations:confirmPassword");
     }
 
-    setErrors(validationErrors)
+    setErrors(validationErrors);
+    if (Object.keys(validationErrors).length === 0){
+      axios.post('http://localhost:4000/signup', formData)
+      .then(res => navigate('/'))
+      .catch(err => console.log(err));
+  }
 
     if(Object.keys(validationErrors).length === 0) {
         alert("Form Submitted successfully")
@@ -80,7 +100,6 @@ const Register = () => {
       <div id="containerForm">
         <div id="leftForm">
           <h1 id="welcomeForm">{t('translations:welcome')}</h1>
-         <p id="loremForm"> Supporto </p>
         </div>
         <form id="rightForm" onSubmit={handleSubmit}>
           <h1 id="login">{t('translations:register')}</h1>
@@ -99,9 +118,9 @@ const Register = () => {
           </label>
 
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             id="password"
-            className={`client-info ${errors.password ? 'text_danger' : ''}`}
+            className={`client-info2 ${errors.password ? 'text_danger' : ''}`}
             name="password"
             value={formData.password}
             onChange={handleChange}
@@ -110,11 +129,14 @@ const Register = () => {
           <label htmlFor="password" className={errors.password ? 'text_danger' : ''} style={errors.password ? { color: 'red' } : {}}>
           {errors.password ? errors.password : "Password"}
           </label>
+          <span className="password-toggle" onClick={toggleShowPassword}>
+            {showPassword ? <IoEyeOff /> : <IoEye />}
+          </span>
 
           <input
-            type="password"
-            id="password"
-            className={`client-info ${errors.confirmPassword ? 'text_danger' : ''}`}
+            type={showConfPassword ? "text" : "password"}
+            id="confPassword"
+            className={`client-info3 ${errors.confirmPassword ? 'text_danger' : ''}`}
             name="confirmPassword"
             value={formData.confirmPassword}
             onChange={handleChange}
@@ -123,6 +145,9 @@ const Register = () => {
           <label htmlFor="confirmPassword" className={errors.confirmPassword ? 'text_danger' : ''} style={errors.confirmPassword ? { color: 'red' } : {}}>
           {errors.confirmPassword ? errors.confirmPassword : t("translations:confirmPassword2")}
           </label>
+          <span className="confPassword-toggle" onClick={toggleShowConfPassword}>
+            {showConfPassword ? <IoEyeOff /> : <IoEye />}
+          </span>
 
           <div className="language-select">
             <label htmlFor="language" className="language-label">{t("translations:selectLanguage")}</label>
