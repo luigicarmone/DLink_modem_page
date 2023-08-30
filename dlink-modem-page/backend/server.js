@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const errorMiddleware = require("./middleware/error");
 const mysql = require("mysql");
+const bcrypt = require("bcrypt"); 
 
 const app = express();
 app.use(express.json());
@@ -33,11 +34,11 @@ db.connect((err) => {
     }
 });
 
-app.post('/signup', (req, res) => {
+app.post('/signup', async (req, res) => { 
     const sql = "INSERT INTO login (`username`,`password`) VALUES(?, ?)";
     const formData = [
         req.body.username,
-        req.body.password
+        await bcrypt.hash(req.body.password, 10) 
     ];
 
     db.query(sql, formData, (err, data) => {
@@ -48,24 +49,32 @@ app.post('/signup', (req, res) => {
     });
 });
 
-app.post('/login', (req, res) => {
-    const sql = "SELECT * FROM login WHERE `username` = (?) AND `password` = (?)";
+app.post('/login', async (req, res) => { 
+    const sql = "SELECT * FROM login WHERE `username` = ?";
     const formData = [
         req.body.username,
-        req.body.password
     ];
 
-    db.query(sql, formData, (err, data) => {
+    db.query(sql, formData, async (err, data) => {
         if (err) {
             return res.status(500).json({ error: 'An error occurred' });
         }
-        if(data.length > 0) {
-            return res.status(201).json({ message: 'Success' });
+
+        if (data.length > 0) {
+            const user = data[0];
+            const passwordMatch = await bcrypt.compare(req.body.password, user.password); 
+
+            if (passwordMatch) {
+                return res.status(200).json({ message: 'Success' });
+            } else {
+                return res.status(401).json({ message: 'Incorrect credentials' });
+            }
         } else {
-            return res.status(401).json({ message: 'Error' });
+            return res.status(401).json({ message: 'User not found' });
         }
     });
 });
+
 
 app.use("/locales", express.static("locales"));
 app.use(errorMiddleware);

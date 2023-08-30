@@ -80,6 +80,7 @@ const Login = () => {
       .then(res => {
       if (res.data.message === "Success") {
           navigate('/status');
+          console.log('Success /status')
       } else {
           alert("Credenziali non corrette");
       }
@@ -111,6 +112,8 @@ const Login = () => {
             id="username"
             className={`client-info ${errors.username ? 'text_danger' : ''}`}
             name="username"
+            minLength={1}
+            maxLength={20}
             value={formData.username}
             onChange={handleChange}
             style={errors.username ? { color: 'red' } : {}}
@@ -124,6 +127,8 @@ const Login = () => {
             id="password"
             className={`client-info2 ${errors.password ? 'text_danger' : ''}`}
             name="password"
+            minLength={6}
+            maxLength={15}
             value={formData.password}
             onChange={handleChange}
             style={errors.password ? { color: 'red' } : {}}

@@ -107,6 +107,8 @@ const Register = () => {
           <input
             type="text"
             id="username"
+            minLength={1}
+            maxLength={20}
             className={`client-info ${errors.username ? 'text_danger' : ''}`}
             name="username"
             value={formData.username}
@@ -122,6 +124,8 @@ const Register = () => {
             id="password"
             className={`client-info2 ${errors.password ? 'text_danger' : ''}`}
             name="password"
+            minLength={6}
+            maxLength={15}
             value={formData.password}
             onChange={handleChange}
             style={errors.password ? { color: 'red' } : {}}
@@ -136,6 +140,8 @@ const Register = () => {
           <input
             type={showConfPassword ? "text" : "password"}
             id="confPassword"
+            minLength={6}
+            maxLength={15}
             className={`client-info3 ${errors.confirmPassword ? 'text_danger' : ''}`}
             name="confirmPassword"
             value={formData.confirmPassword}
